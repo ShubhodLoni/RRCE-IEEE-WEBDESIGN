@@ -591,6 +591,14 @@
     chatLauncher = document.getElementById("chat-launcher");
     if (!chatPanel || !chatLauncher) return;
 
+    if (chatLauncher.dataset.chatBound !== "true") {
+      chatLauncher.dataset.chatBound = "true";
+      chatLauncher.addEventListener("click", function (e) {
+        e.preventDefault();
+        toggleChat();
+      });
+    }
+
     buildChatMarkup();
 
     if (isChatOpen()) {
@@ -600,15 +608,6 @@
       chatPanel.style.display = "none";
     }
   }
-
-  // Delegated document-level click listener so it never misses a click
-  document.addEventListener("click", function (e) {
-    const launcher = e.target.closest("#chat-launcher, .chat-launcher");
-    if (launcher) {
-      e.preventDefault();
-      toggleChat();
-    }
-  });
 
   // Auto initialize on DOM ready
   if (document.readyState === "loading") {

@@ -439,15 +439,6 @@
       if (e.target.closest("[data-menu-open]")) openMenu();
       if (e.target.closest("[data-menu-close], [data-menu-backdrop]")) closeMenu();
       if (e.target.closest("[data-to-top]")) window.scrollTo({ top: 0, behavior: "smooth" });
-      const chatToggle = e.target.closest("#chat-launcher, .chat-launcher");
-      if (chatToggle) {
-        e.preventDefault();
-        if (global.RRCEChat && typeof global.RRCEChat.toggleChat === "function") {
-          global.RRCEChat.toggleChat();
-        } else if (global.RRCEChat && typeof global.RRCEChat.openChat === "function") {
-          global.RRCEChat.openChat();
-        }
-      }
     });
 
     const nav = document.querySelector("[data-nav]");
