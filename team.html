@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Executive Committee & Team | IEEE Student Branch — RajaRajeswari College of Engineering</title>
+    <meta
+      name="description"
+      content="Meet the faculty counselor, mentors, and student executive committee leaders of IEEE Student Branch at RRCE Bengaluru."
+    />
+    <meta property="og:title" content="Team | IEEE Student Branch RRCE" />
+    <meta
+      property="og:description"
+      content="Leadership and student executive committee of the IEEE Student Branch at RRCE."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#0A2A5E" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("rrce-theme");
+          if (t !== "light" && t !== "dark") {
+            t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+          }
+          document.documentElement.setAttribute("data-theme", t);
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body data-root="" data-page="team">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div id="site-chrome-top"></div>
+
+    <main id="main">
+      <section class="hero hero--sub" aria-label="Team Leadership">
+        <div class="circuit" aria-hidden="true"></div>
+        <div class="container hero__content">
+          <p class="section-kicker">01 Leadership</p>
+          <h1>Branch Leadership & Executive Committee</h1>
+          <p class="lede">
+            Guided by dedicated faculty mentors and powered by proactive student leaders representing diverse engineering departments at RRCE.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" id="team-list" aria-labelledby="team-heading">
+        <div class="container">
+          <div style="margin-bottom: 2rem;">
+            <p class="section-kicker">02 ExeCom</p>
+            <h2 id="team-heading">Branch Officers</h2>
+            <p class="lede">
+              Faculty counselor and student officer names shown below are placeholders (marked TODO) for demonstration.
+              The branch counselor will furnish the verified executive committee list.
+            </p>
+          </div>
+
+          <!-- Team Groups Rendered by main.js (Counselor, Mentor, ExeCom) -->
+          <div data-team-page style="display: grid; gap: 3rem;"></div>
+        </div>
+      </section>
+
+      <!-- Elections and Succession -->
+      <section class="section" id="elections" aria-labelledby="elec-title" style="background: var(--card);">
+        <div class="container grid grid-2">
+          <div class="reveal">
+            <p class="section-kicker">03 Succession</p>
+            <h2 id="elec-title">Annual Elections & Leadership Pathways</h2>
+            <p>
+              The IEEE Student Branch conducts annual executive committee transitions in accordance with IEEE student
+              branch guidelines. Active student members from CSE, ISE, ECE, EEE, ME, and allied departments are invited to
+              serve in leadership capacities.
+            </p>
+            <p>
+              Serving as a branch officer builds crucial project management, public speaking, budgeting, and team leadership competencies.
+            </p>
+          </div>
+          <div class="card card__body reveal">
+            <h3>Join the Volunteer Team</h3>
+            <p>
+              Not ready for an executive office yet? Join an event organizing sub-committee, technical logistics crew,
+              or digital media team to gain hands-on experience.
+            </p>
+            <a class="btn btn--blue" href="contact.html">Volunteer with the Branch</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="section cta-band" aria-labelledby="team-cta">
+        <div class="circuit" aria-hidden="true"></div>
+        <div class="container">
+          <p class="section-kicker">04 Collaborate</p>
+          <h2 id="team-cta">Connect with Your Department Coordinators</h2>
+          <p class="lede">Have questions about IEEE memberships or chapter events? Reach out to our team.</p>
+          <a class="btn btn--yellow" href="contact.html">Contact Us</a>
+          <a class="btn btn--outline" href="about.html">About the Branch</a>
+        </div>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+    <div id="site-overlays"></div>
+
+    <script src="js/data.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/chatbot.js"></script>
+  </body>
+</html>

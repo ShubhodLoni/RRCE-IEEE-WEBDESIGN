@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>My Events & Digital Passes | IEEE RRCE Member Portal</title>
+    <meta
+      name="description"
+      content="Track your registered IEEE workshops, check-in passes, attended session certificates, and submit workshop feedback."
+    />
+    <meta name="theme-color" content="#0A2A5E" />
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/portal.css" />
+    <link rel="stylesheet" href="../css/chatbot.css" />
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("rrce-theme");
+          if (t !== "light" && t !== "dark") {
+            t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+          }
+          document.documentElement.setAttribute("data-theme", t);
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body data-root="../" data-page="my-events">
+    <a class="skip-link" href="#main">Skip to events list</a>
+
+    <div class="portal-layout">
+      <aside class="portal-sidebar" id="portal-sidebar"></aside>
+
+      <div class="portal-main">
+        <header class="portal-topbar" id="portal-topbar"></header>
+
+        <main class="portal-content" id="main">
+          <div class="portal-page-head">
+            <div>
+              <p class="section-kicker" style="margin:0 0 0.25rem;">Event Management</p>
+              <h1>My Events & Passes</h1>
+              <p style="margin:0; color:var(--muted); font-size:0.92rem;">
+                Manage workshop registrations, access QR check-in codes, and submit session feedback.
+              </p>
+            </div>
+            <div>
+              <a class="btn btn--yellow" href="../events.html">Browse Public Calendar &rarr;</a>
+            </div>
+          </div>
+
+          <!-- Tabs: Registered / Attended / Waitlist -->
+          <div class="tabs" id="my-events-tabs" role="tablist" aria-label="Event Status Tabs">
+            <button class="tab is-active" type="button" data-tab="registered" role="tab" aria-selected="true">
+              Registered
+            </button>
+            <button class="tab" type="button" data-tab="attended" role="tab" aria-selected="false">
+              Attended History
+            </button>
+            <button class="tab" type="button" data-tab="waitlist" role="tab" aria-selected="false">
+              Waitlist
+            </button>
+          </div>
+
+          <!-- Events List Container -->
+          <div class="grid grid-2" id="my-events-list"></div>
+        </main>
+      </div>
+    </div>
+
+    <div id="site-overlays"></div>
+
+    <script src="../js/data.js"></script>
+    <script src="../js/components.js"></script>
+    <script src="../js/portal-data.js"></script>
+    <script src="../js/portal.js"></script>
+    <script src="../js/chatbot.js"></script>
+  </body>
+</html>

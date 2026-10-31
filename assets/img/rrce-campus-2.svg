@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <rect width="1600" height="900" fill="#E3EEFB"/>
+  <rect y="500" width="1600" height="400" fill="#C5D9F0"/>
+  <rect x="120" y="220" width="1360" height="420" fill="#0B5CAD"/>
+  <rect x="120" y="220" width="1360" height="48" fill="#FFC20E"/>
+  <g fill="#FFFFFF">
+    <rect x="180" y="300" width="70" height="70"/><rect x="280" y="300" width="70" height="70"/>
+    <rect x="380" y="300" width="70" height="70"/><rect x="480" y="300" width="70" height="70"/>
+    <rect x="580" y="300" width="70" height="70"/><rect x="680" y="300" width="70" height="70"/>
+    <rect x="180" y="400" width="70" height="70"/><rect x="280" y="400" width="70" height="70"/>
+    <rect x="380" y="400" width="70" height="70"/><rect x="480" y="400" width="70" height="70"/>
+    <rect x="580" y="400" width="70" height="70"/><rect x="680" y="400" width="70" height="70"/>
+  </g>
+  <rect x="900" y="300" width="480" height="280" fill="#0A2A5E"/>
+  <text x="1140" y="460" text-anchor="middle" fill="#FFC20E" font-family="Arial" font-size="32" font-weight="700">LIBRARY BLOCK</text>
+  <text x="800" y="820" text-anchor="middle" fill="#0A2A5E" font-family="Arial" font-size="28" font-weight="700">Placeholder campus illustration  replace with photo</text>
+</svg>

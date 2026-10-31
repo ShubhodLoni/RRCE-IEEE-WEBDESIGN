@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>404 Page Not Found | IEEE Student Branch — RRCE Bengaluru</title>
+    <meta
+      name="description"
+      content="The page you are looking for does not exist on the IEEE Student Branch RRCE website. Return to homepage or browse our directory."
+    />
+    <meta property="og:title" content="404 Page Not Found | IEEE RRCE" />
+    <meta name="theme-color" content="#0A2A5E" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("rrce-theme");
+          if (t !== "light" && t !== "dark") {
+            t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+          }
+          document.documentElement.setAttribute("data-theme", t);
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body data-root="" data-page="404">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div id="site-chrome-top"></div>
+
+    <main id="main">
+      <section class="hero hero--sub" aria-label="Error 404">
+        <div class="circuit" aria-hidden="true"></div>
+        <div class="container hero__content" style="text-align: center; padding: clamp(3rem, 8vw, 6rem) 0;">
+          <p class="section-kicker" style="color: var(--yellow); font-size: 1.1rem;">Error 404 &bull; Page Not Found</p>
+          <h1 style="font-size: clamp(3rem, 10vw, 7rem); margin: 0.5rem 0;">404</h1>
+          <p class="lede" style="max-width: 600px; margin: 0 auto 2rem;">
+            The requested page could not be located on the IEEE Student Branch RRCE server. It may have been moved, renamed, or temporarily unavailable.
+          </p>
+          <div style="display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap;">
+            <a class="btn btn--yellow" href="index.html">Return to Home</a>
+            <a class="btn btn--outline" href="events.html">Browse Events</a>
+            <a class="btn btn--ghost" href="contact.html">Contact Us</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="quick-links" aria-labelledby="quick-title">
+        <div class="container" style="max-width: 720px; text-align: center;">
+          <h2 id="quick-title">Looking for Something Specific?</h2>
+          <p class="lede">Here are helpful shortcuts to explore the student branch website:</p>
+          <div class="grid grid-3" style="margin-top: 1.5rem; text-align: left;">
+            <a class="card card__body" href="about.html" style="text-decoration: none; color: inherit;">
+              <h4>About RRCE IEEE</h4>
+              <p>History, vision, mission, and college accreditation.</p>
+            </a>
+            <a class="card card__body" href="chapters.html" style="text-decoration: none; color: inherit;">
+              <h4>Society Chapters</h4>
+              <p>Explore technical chapters mapped to departments.</p>
+            </a>
+            <a class="card card__body" href="portal/dashboard.html" style="text-decoration: none; color: inherit;">
+              <h4>Member Portal Preview</h4>
+              <p>Frontend-only dashboard preview with dummy data.</p>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+    <div id="site-overlays"></div>
+
+    <script src="js/data.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/chatbot.js"></script>
+  </body>
+</html>

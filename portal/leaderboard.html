@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Member Points & Leaderboard | IEEE RRCE Member Portal</title>
+    <meta
+      name="description"
+      content="Track member activity points, badge achievements, and departmental rankings at IEEE RRCE Student Branch."
+    />
+    <meta name="theme-color" content="#0A2A5E" />
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/portal.css" />
+    <link rel="stylesheet" href="../css/chatbot.css" />
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("rrce-theme");
+          if (t !== "light" && t !== "dark") {
+            t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+          }
+          document.documentElement.setAttribute("data-theme", t);
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body data-root="../" data-page="leaderboard">
+    <a class="skip-link" href="#main">Skip to leaderboard</a>
+
+    <div class="portal-layout">
+      <aside class="portal-sidebar" id="portal-sidebar"></aside>
+
+      <div class="portal-main">
+        <header class="portal-topbar" id="portal-topbar"></header>
+
+        <main class="portal-content" id="main">
+          <div class="portal-page-head">
+            <div>
+              <p class="section-kicker" style="margin:0 0 0.25rem;">Recognition</p>
+              <h1>Branch Leaderboard</h1>
+              <p style="margin:0; color:var(--muted); font-size:0.92rem;">
+                Points are earned by attending workshops, presenting research papers, and volunteering in events.
+              </p>
+            </div>
+            <div style="display:flex; align-items:center; gap:0.6rem;">
+              <label style="font-size:0.88rem; font-weight:700;">Department:</label>
+              <select id="leaderboard-dept-filter" style="width:auto; padding:0.4rem 0.8rem;">
+                <option value="All">All Departments</option>
+                <option value="CSE">CSE & Allied</option>
+                <option value="ECE">ECE</option>
+                <option value="EEE">EEE</option>
+                <option value="ISE">ISE</option>
+                <option value="Robotics & Automation">Robotics & Automation</option>
+                <option value="ME">Mechanical</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Table Container -->
+          <div class="portal-table-wrap">
+            <table class="portal-table">
+              <thead>
+                <tr>
+                  <th>Rank</th>
+                  <th>Member Name</th>
+                  <th>Department</th>
+                  <th>Points</th>
+                  <th>Badges</th>
+                  <th>Role</th>
+                </tr>
+              </thead>
+              <tbody id="portal-leaderboard-rows"></tbody>
+            </table>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <div id="site-overlays"></div>
+
+    <script src="../js/data.js"></script>
+    <script src="../js/components.js"></script>
+    <script src="../js/portal-data.js"></script>
+    <script src="../js/portal.js"></script>
+    <script src="../js/chatbot.js"></script>
+  </body>
+</html>

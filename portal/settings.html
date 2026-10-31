@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portal Settings & Privacy | IEEE RRCE Member Portal</title>
+    <meta
+      name="description"
+      content="Configure display themes, notifications, and privacy preferences for the IEEE RRCE Member Portal."
+    />
+    <meta name="theme-color" content="#0A2A5E" />
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/portal.css" />
+    <link rel="stylesheet" href="../css/chatbot.css" />
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("rrce-theme");
+          if (t !== "light" && t !== "dark") {
+            t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+          }
+          document.documentElement.setAttribute("data-theme", t);
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body data-root="../" data-page="settings">
+    <a class="skip-link" href="#main">Skip to settings</a>
+
+    <div class="portal-layout">
+      <aside class="portal-sidebar" id="portal-sidebar"></aside>
+
+      <div class="portal-main">
+        <header class="portal-topbar" id="portal-topbar"></header>
+
+        <main class="portal-content" id="main">
+          <div class="portal-page-head">
+            <div>
+              <p class="section-kicker" style="margin:0 0 0.25rem;">Preferences</p>
+              <h1>Portal Settings</h1>
+              <p style="margin:0; color:var(--muted); font-size:0.92rem;">
+                Adjust display themes, notification frequencies, and preview controls.
+              </p>
+            </div>
+          </div>
+
+          <div class="card card__body" style="max-width:720px;">
+            <form id="portal-settings-form" class="form-grid">
+              <h3>Display & Theme</h3>
+              <p style="margin:0; font-size:0.9rem; color:var(--muted);">
+                Theme toggle is persisted across all pages via browser local storage.
+              </p>
+              <div style="display:flex; gap:0.75rem; margin-top:0.4rem;">
+                <button
+                  class="btn btn--outline"
+                  type="button"
+                  onclick="window.RRCEUI.setTheme('light');"
+                >
+                  ☀️ Light Mode
+                </button>
+                <button
+                  class="btn btn--outline"
+                  type="button"
+                  onclick="window.RRCEUI.setTheme('dark');"
+                >
+                  🌙 Dark Mode
+                </button>
+              </div>
+
+              <hr style="border:0; border-top:1px solid var(--border); margin:1.25rem 0;" />
+
+              <h3>Notification Preferences</h3>
+              <label style="display:flex; align-items:center; gap:0.6rem; font-weight:normal;">
+                <input type="checkbox" checked style="width:18px; height:18px; accent-color:var(--blue);" />
+                Receive email alerts for newly scheduled workshops and hackathons
+              </label>
+              <label style="display:flex; align-items:center; gap:0.6rem; font-weight:normal;">
+                <input type="checkbox" checked style="width:18px; height:18px; accent-color:var(--blue);" />
+                Notify me when certificates of participation are ready to download
+              </label>
+              <label style="display:flex; align-items:center; gap:0.6rem; font-weight:normal;">
+                <input type="checkbox" checked style="width:18px; height:18px; accent-color:var(--blue);" />
+                Community thread reply and mention notifications
+              </label>
+
+              <hr style="border:0; border-top:1px solid var(--border); margin:1.25rem 0;" />
+
+              <h3>Privacy & Directory Visibility</h3>
+              <label style="display:flex; align-items:center; gap:0.6rem; font-weight:normal;">
+                <input type="checkbox" checked style="width:18px; height:18px; accent-color:var(--blue);" />
+                Display my profile and points on the branch public leaderboard
+              </label>
+              <label style="display:flex; align-items:center; gap:0.6rem; font-weight:normal;">
+                <input type="checkbox" checked style="width:18px; height:18px; accent-color:var(--blue);" />
+                Allow fellow RRCE student members to find me in the member directory
+              </label>
+
+              <div style="margin-top:1.5rem; display:flex; justify-content:space-between; align-items:center;">
+                <button class="btn btn--yellow" type="submit">Save Preferences</button>
+                <button class="btn btn--ghost" style="color:#ef4444;" type="button" id="reset-portal-state-btn">
+                  Reset Simulated State
+                </button>
+              </div>
+            </form>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <div id="site-overlays"></div>
+
+    <script src="../js/data.js"></script>
+    <script src="../js/components.js"></script>
+    <script src="../js/portal-data.js"></script>
+    <script src="../js/portal.js"></script>
+    <script src="../js/chatbot.js"></script>
+  </body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Member Profile & Avatar | IEEE RRCE Member Portal</title>
+    <meta
+      name="description"
+      content="Update your IEEE RRCE student member profile, avatar style, skills, and contact information."
+    />
+    <meta name="theme-color" content="#0A2A5E" />
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/portal.css" />
+    <link rel="stylesheet" href="../css/chatbot.css" />
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("rrce-theme");
+          if (t !== "light" && t !== "dark") {
+            t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+          }
+          document.documentElement.setAttribute("data-theme", t);
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body data-root="../" data-page="profile">
+    <a class="skip-link" href="#main">Skip to profile form</a>
+
+    <div class="portal-layout">
+      <aside class="portal-sidebar" id="portal-sidebar"></aside>
+
+      <div class="portal-main">
+        <header class="portal-topbar" id="portal-topbar"></header>
+
+        <main class="portal-content" id="main">
+          <div class="portal-page-head">
+            <div>
+              <p class="section-kicker" style="margin:0 0 0.25rem;">Account Profile</p>
+              <h1>My Student Member Profile</h1>
+              <p style="margin:0; color:var(--muted); font-size:0.92rem;">
+                Manage your public information, avatar seed, skills tags, and contact preferences.
+              </p>
+            </div>
+            <div>
+              <span class="portal-dummy-badge">In-Memory State</span>
+            </div>
+          </div>
+
+          <div style="display:grid; grid-template-columns:1fr 2fr; gap:1.5rem; align-items:flex-start;">
+            <!-- Left: Avatar Preview & Picker -->
+            <div class="card card__body" style="text-align:center;">
+              <img
+                id="profile-avatar-preview"
+                src="https://api.dicebear.com/9.x/avataaars/svg?seed=AaravCSE"
+                alt="Profile Avatar"
+                style="width:120px; height:120px; border-radius:50%; margin:0 auto 1rem; border:4px solid var(--yellow);"
+              />
+              <h3 style="margin:0;">Aarav S.</h3>
+              <p style="margin:0.2rem 0 1rem; font-size:0.88rem; color:var(--muted);">
+                1RR22CS001 • CSE Department
+              </p>
+
+              <h4 style="font-size:0.9rem; margin-bottom:0.5rem;">Pick Avatar Variant:</h4>
+              <div id="avatar-picker-wrap" style="display:flex; justify-content:center; gap:0.4rem; flex-wrap:wrap;"></div>
+            </div>
+
+            <!-- Right: Editable Profile Form -->
+            <div class="card card__body">
+              <h3 style="margin-top:0;">Profile Details</h3>
+              <form id="portal-profile-form" class="form-grid">
+                <label>
+                  Full Name
+                  <input type="text" name="name" value="Aarav Sharma" required />
+                </label>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.75rem;">
+                  <label>
+                    USN
+                    <input type="text" name="usn" value="1RR22CS001" disabled title="Locked institutional credential" />
+                  </label>
+                  <label>
+                    Academic Year
+                    <input type="text" name="year" value="3rd Year (6th Sem)" required />
+                  </label>
+                </div>
+                <div style="display:grid; grid-template-columns:1fr 1fr; gap:0.75rem;">
+                  <label>
+                    College Email
+                    <input type="email" name="email" value="aarav.cse@rrce.ac.in" required />
+                  </label>
+                  <label>
+                    Mobile Phone
+                    <input type="tel" name="phone" value="+91-9876543210" required />
+                  </label>
+                </div>
+                <label>
+                  Technical Skills (Comma-separated)
+                  <input type="text" name="skills" value="Python, Embedded C, Robotics, ROS, TensorFlow, Technical Writing" />
+                </label>
+                <button class="btn btn--yellow" type="submit" style="margin-top:0.5rem;">
+                  Save Profile Changes
+                </button>
+              </form>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <div id="site-overlays"></div>
+
+    <script src="../js/data.js"></script>
+    <script src="../js/components.js"></script>
+    <script src="../js/portal-data.js"></script>
+    <script src="../js/portal.js"></script>
+    <script src="../js/chatbot.js"></script>
+  </body>
+</html>

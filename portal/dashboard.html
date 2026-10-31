@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Member Dashboard Preview | IEEE RRCE Student Branch</title>
+    <meta
+      name="description"
+      content="Frontend-only preview of the IEEE Student Branch RRCE Member Portal — digital membership card, event passes, and activity tracking."
+    />
+    <meta name="theme-color" content="#0A2A5E" />
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/portal.css" />
+    <link rel="stylesheet" href="../css/chatbot.css" />
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("rrce-theme");
+          if (t !== "light" && t !== "dark") {
+            t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+          }
+          document.documentElement.setAttribute("data-theme", t);
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body data-root="../" data-page="dashboard">
+    <a class="skip-link" href="#main">Skip to main dashboard</a>
+
+    <div class="portal-layout">
+      <aside class="portal-sidebar" id="portal-sidebar"></aside>
+
+      <div class="portal-main">
+        <header class="portal-topbar" id="portal-topbar"></header>
+
+        <main class="portal-content" id="main">
+          <!-- Page Header -->
+          <div class="portal-page-head">
+            <div>
+              <p class="section-kicker" style="margin:0 0 0.25rem;">Member Dashboard</p>
+              <h1>Welcome back, Aarav!</h1>
+              <p style="margin:0; color:var(--muted); font-size:0.92rem;">
+                Here is your branch activity overview, upcoming workshop passes, and digital ID.
+              </p>
+            </div>
+            <div style="display:flex; gap:0.5rem;">
+              <a class="btn btn--yellow" href="my-events.html">Browse My Passes</a>
+              <a class="btn btn--outline" href="certificates.html">View Certificates</a>
+            </div>
+          </div>
+
+          <!-- Top Row: Digital Membership Card + Stat Cards -->
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:1.5rem; align-items:stretch;">
+            <!-- Membership Card -->
+            <div class="membership-card-wrap">
+              <div class="membership-card" id="digital-membership-card">
+                <div class="circuit" aria-hidden="true"></div>
+                <div class="membership-card__head">
+                  <div class="membership-card__brand">
+                    IEEE RRCE
+                    <span>Student Branch</span>
+                  </div>
+                  <div class="membership-card__status">
+                    <span></span>
+                    Active
+                  </div>
+                </div>
+
+                <div class="membership-card__body">
+                  <div>
+                    <h2 class="membership-card__name">Aarav S.</h2>
+                    <div class="membership-card__meta">
+                      <span>USN: 1RR22CS001</span>
+                      <span>Dept: CSE • 3rd Year</span>
+                      <span>ID: IEEE-RRCE-2024-8842</span>
+                    </div>
+                  </div>
+                  <div class="membership-card__qr">
+                    <canvas id="id-card-qr" width="72" height="72"></canvas>
+                    <small>Scan Pass</small>
+                  </div>
+                </div>
+
+                <div class="membership-card__foot">
+                  <span>Valid: <strong>31 Dec 2027</strong></span>
+                  <span>RajaRajeswari College of Engg</span>
+                </div>
+              </div>
+
+              <!-- Card Action Buttons -->
+              <div style="display:flex; gap:0.6rem;">
+                <button class="btn btn--yellow" style="flex:1;" type="button" id="download-id-card-btn">
+                  Download Card (PNG)
+                </button>
+                <button class="btn btn--outline" style="flex:1;" type="button" id="print-id-card-btn">
+                  Print Card
+                </button>
+              </div>
+            </div>
+
+            <!-- 4 Quick Stats Cards -->
+            <div style="display:grid; grid-template-columns:repeat(2, 1fr); gap:1rem;">
+              <div class="card card__body stat-card" style="display:flex; flex-direction:column; justify-content:center;">
+                <span style="font-size:1.8rem; margin-bottom:0.25rem;">🎟️</span>
+                <strong style="color:var(--blue);">12</strong>
+                <span style="font-weight:600; font-size:0.9rem;">Events Attended</span>
+              </div>
+              <div class="card card__body stat-card" style="display:flex; flex-direction:column; justify-content:center;">
+                <span style="font-size:1.8rem; margin-bottom:0.25rem;">⚡</span>
+                <strong style="color:var(--blue);">420</strong>
+                <span style="font-weight:600; font-size:0.9rem;">Activity Points</span>
+              </div>
+              <div class="card card__body stat-card" style="display:flex; flex-direction:column; justify-content:center;">
+                <span style="font-size:1.8rem; margin-bottom:0.25rem;">🎓</span>
+                <strong style="color:var(--blue);">5</strong>
+                <span style="font-weight:600; font-size:0.9rem;">Certificates</span>
+              </div>
+              <div class="card card__body stat-card" style="display:flex; flex-direction:column; justify-content:center;">
+                <span style="font-size:1.8rem; margin-bottom:0.25rem;">🏆</span>
+                <strong style="color:var(--blue);">6</strong>
+                <span style="font-weight:600; font-size:0.9rem;">Badges Earned</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Middle Row: SVG Activity Points Chart -->
+          <section aria-labelledby="chart-title">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.6rem;">
+              <h2 id="chart-title" style="font-size:1.25rem; margin:0;">Activity Growth (Points)</h2>
+              <span class="portal-dummy-badge">Interactive Chart</span>
+            </div>
+            <div id="dashboard-chart-wrap" class="activity-chart-wrap"></div>
+          </section>
+
+          <!-- Bottom Grid: Events & Tasks Checklist -->
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:1.5rem;">
+            <!-- Left Column: Upcoming Registered Events -->
+            <div style="display:flex; flex-direction:column; gap:1rem;">
+              <div style="display:flex; justify-content:space-between; align-items:center;">
+                <h3 style="margin:0; font-size:1.15rem;">Upcoming Registered Events</h3>
+                <a class="btn btn--ghost" href="my-events.html">View all &rarr;</a>
+              </div>
+
+              <div class="card card__body" style="display:flex; flex-direction:column; gap:0.4rem;">
+                <div style="display:flex; justify-content:space-between;">
+                  <span class="tag tag--Event">WORKSHOP</span>
+                  <small style="color:var(--muted);">8 Nov 2026</small>
+                </div>
+                <h4 style="margin:0.2rem 0;">PCB Design & Fabrication Weekend</h4>
+                <p style="margin:0; font-size:0.88rem; color:var(--muted);">
+                  ECE Hardware Lab • 09:30 AM
+                </p>
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-top:0.4rem;">
+                  <span class="portal-dummy-badge">Code: RRCE-PCB-9942</span>
+                  <a class="btn btn--outline" href="my-events.html">Pass Ready</a>
+                </div>
+              </div>
+
+              <div class="card card__body" style="display:flex; flex-direction:column; gap:0.4rem;">
+                <div style="display:flex; justify-content:space-between;">
+                  <span class="tag tag--Competition">CONTEST</span>
+                  <small style="color:var(--muted);">21 Nov 2026</small>
+                </div>
+                <h4 style="margin:0.2rem 0;">IEEEXtreme 20.0 Strategy & Sprint</h4>
+                <p style="margin:0; font-size:0.88rem; color:var(--muted);">
+                  CCF Lab 3 • 01:30 PM
+                </p>
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-top:0.4rem;">
+                  <span class="portal-dummy-badge">Code: RRCE-XTR-1024</span>
+                  <a class="btn btn--outline" href="my-events.html">Pass Ready</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column: Volunteer Tasks Checklist -->
+            <div style="display:flex; flex-direction:column; gap:1rem;">
+              <div style="display:flex; justify-content:space-between; align-items:center;">
+                <h3 style="margin:0; font-size:1.15rem;">Volunteer Task Checklist</h3>
+                <span class="portal-nav__badge">Interactive</span>
+              </div>
+              <div class="checklist" id="dashboard-checklist"></div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <!-- Overlays for Chatbot and Modals -->
+    <div id="site-overlays"></div>
+
+    <script src="../js/data.js"></script>
+    <script src="../js/components.js"></script>
+    <script src="../js/portal-data.js"></script>
+    <script src="../js/portal.js"></script>
+    <script src="../js/chatbot.js"></script>
+  </body>
+</html>

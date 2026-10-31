@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <rect width="1600" height="900" fill="#F4F8FD"/>
+  <circle cx="1280" cy="140" r="70" fill="#FFC20E"/>
+  <rect y="640" width="1600" height="260" fill="#2E7D4F"/>
+  <rect x="200" y="300" width="240" height="380" fill="#0B5CAD"/>
+  <rect x="480" y="220" width="280" height="460" fill="#00629B"/>
+  <rect x="800" y="280" width="240" height="400" fill="#0A2A5E"/>
+  <rect x="1080" y="340" width="220" height="340" fill="#0B5CAD"/>
+  <rect x="560" y="520" width="120" height="160" fill="#FFC20E"/>
+  <text x="800" y="200" text-anchor="middle" fill="#0A2A5E" font-family="Arial" font-size="34" font-weight="700">ACADEMIC BLOCKS</text>
+</svg>

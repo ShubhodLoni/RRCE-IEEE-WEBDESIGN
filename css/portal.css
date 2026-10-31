@@ -1,0 +1,622 @@
+/* ==========================================================================
+   IEEE RRCE Member Portal — Dashboard & Application Styles
+   Frontend-only preview with zero authentication.
+   ========================================================================== */
+
+:root {
+  --portal-sidebar-w: 260px;
+  --portal-topbar-h: 68px;
+}
+
+/* Layout */
+.portal-layout {
+  display: flex;
+  min-height: 100vh;
+  background: var(--bg);
+  color: var(--text);
+}
+
+/* Sidebar */
+.portal-sidebar {
+  width: var(--portal-sidebar-w);
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  background: var(--card);
+  border-right: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  z-index: 90;
+  overflow-y: auto;
+  transition: transform 0.25s ease;
+}
+
+.portal-sidebar__head {
+  padding: 1.2rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.portal-sidebar__brand {
+  font-family: var(--font-head);
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+.portal-sidebar__brand span {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--blue);
+}
+
+.portal-nav {
+  padding: 1rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  flex: 1;
+}
+
+.portal-nav__section {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  padding: 0.75rem 0.75rem 0.25rem;
+}
+
+.portal-nav__link {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.65rem 0.85rem;
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.92rem;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.portal-nav__link:hover {
+  background: var(--blue-100);
+  color: var(--blue-900);
+}
+
+[data-theme="dark"] .portal-nav__link:hover {
+  background: var(--blue-900);
+  color: var(--yellow);
+}
+
+.portal-nav__link.is-active {
+  background: var(--blue);
+  color: #ffffff;
+}
+
+.portal-nav__badge {
+  margin-left: auto;
+  background: var(--yellow);
+  color: var(--blue-900);
+  padding: 0.15rem 0.45rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 800;
+}
+
+.portal-sidebar__foot {
+  padding: 1rem 1.25rem;
+  border-top: 1px solid var(--border);
+  background: var(--bg);
+}
+
+.portal-dummy-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.4rem 0.7rem;
+  background: rgba(255, 194, 14, 0.18);
+  border: 1px solid var(--yellow);
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--blue-900);
+}
+
+[data-theme="dark"] .portal-dummy-badge {
+  color: var(--yellow);
+  background: rgba(255, 194, 14, 0.12);
+}
+
+.portal-dummy-badge__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--yellow-600);
+}
+
+/* Main Area */
+.portal-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* Topbar */
+.portal-topbar {
+  height: var(--portal-topbar-h);
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 40;
+}
+
+.portal-topbar__search {
+  max-width: 360px;
+  width: 100%;
+}
+
+.portal-topbar__actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.portal-icon-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--card);
+  color: var(--text);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.15s ease;
+}
+
+.portal-icon-btn:hover {
+  background: var(--blue-100);
+}
+
+.portal-icon-btn__badge {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  width: 8px;
+  height: 8px;
+  background: #e53e3e;
+  border-radius: 50%;
+  border: 2px solid var(--card);
+}
+
+.portal-avatar-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.35rem 0.65rem 0.35rem 0.35rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--card);
+  color: var(--text);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 600;
+  font-size: 0.88rem;
+}
+
+.portal-avatar-btn img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: var(--blue-100);
+}
+
+/* Mobile Drawer Hamburger */
+.portal-hamburger {
+  display: none;
+  background: transparent;
+  border: 0;
+  color: var(--text);
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+.portal-drawer-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(7, 16, 31, 0.6);
+  z-index: 85;
+}
+
+/* Content Area */
+.portal-content {
+  padding: 1.5rem;
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Page Header */
+.portal-page-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.portal-page-head h1 {
+  font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+  margin: 0;
+}
+
+/* Digital Membership Card */
+.membership-card-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 440px;
+  width: 100%;
+}
+
+.membership-card {
+  position: relative;
+  background: linear-gradient(135deg, #0a2a5e 0%, #0b5cad 75%, #00629b 100%);
+  color: #ffffff;
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 16px 36px rgba(10, 42, 94, 0.28);
+  border: 2px solid var(--yellow);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.membership-card .circuit {
+  opacity: 0.2;
+}
+
+.membership-card__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  position: relative;
+  z-index: 1;
+}
+
+.membership-card__brand {
+  font-family: var(--font-head);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.membership-card__brand span {
+  display: block;
+  font-size: 0.72rem;
+  color: var(--yellow);
+}
+
+.membership-card__status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.6rem;
+  background: rgba(16, 185, 129, 0.25);
+  border: 1px solid #10b981;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #a7f3d0;
+}
+
+.membership-card__status span {
+  width: 6px;
+  height: 6px;
+  background: #10b981;
+  border-radius: 50%;
+}
+
+.membership-card__body {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  z-index: 1;
+}
+
+.membership-card__name {
+  font-family: var(--font-head);
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.2;
+  color: #ffffff;
+}
+
+.membership-card__meta {
+  font-size: 0.82rem;
+  color: #e2eaf5;
+  margin-top: 0.3rem;
+  display: grid;
+  gap: 0.15rem;
+}
+
+.membership-card__qr {
+  background: #ffffff;
+  padding: 6px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  flex-shrink: 0;
+}
+
+.membership-card__qr canvas {
+  width: 72px;
+  height: 72px;
+  display: block;
+}
+
+.membership-card__qr small {
+  font-size: 0.58rem;
+  color: #5b6b82;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.membership-card__foot {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  color: #cadbee;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  padding-top: 0.75rem;
+  position: relative;
+  z-index: 1;
+}
+
+.membership-card__foot strong {
+  color: var(--yellow);
+}
+
+/* Activity Chart (Handcrafted SVG) */
+.activity-chart-wrap {
+  position: relative;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  box-shadow: var(--shadow);
+}
+
+.chart-svg {
+  width: 100%;
+  height: 240px;
+  display: block;
+}
+
+.chart-bar {
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+
+.chart-bar:hover {
+  opacity: 0.85;
+}
+
+.chart-tooltip {
+  position: absolute;
+  background: var(--blue-900);
+  color: #ffffff;
+  padding: 0.35rem 0.65rem;
+  border-radius: 8px;
+  font-size: 0.76rem;
+  pointer-events: none;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+  transform: translate(-50%, -120%);
+  transition: opacity 0.15s ease;
+  white-space: nowrap;
+  z-index: 20;
+}
+
+/* Volunteer Checklist */
+.checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.checklist-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  background: var(--card);
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.checklist-item.is-completed {
+  opacity: 0.65;
+  text-decoration: line-through;
+}
+
+.checklist-item input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--blue);
+  cursor: pointer;
+}
+
+/* Portal Tables */
+.portal-table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--card);
+}
+
+.portal-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.92rem;
+}
+
+.portal-table th {
+  background: var(--bg);
+  padding: 0.85rem 1rem;
+  font-weight: 700;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.portal-table td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+
+.portal-table tr:last-child td {
+  border-bottom: 0;
+}
+
+.portal-table tr:hover td {
+  background: var(--blue-100);
+}
+
+[data-theme="dark"] .portal-table tr:hover td {
+  background: var(--blue-900);
+}
+
+.portal-table .is-current-member td {
+  background: rgba(255, 194, 14, 0.12);
+  font-weight: 700;
+}
+
+/* Toast Notifications Stack */
+.toast-stack {
+  position: fixed;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  z-index: 150;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  pointer-events: none;
+}
+
+.toast {
+  pointer-events: auto;
+  background: var(--blue-900);
+  color: #ffffff;
+  padding: 0.75rem 1.1rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  font-size: 0.88rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  animation: toastSlide 0.25s ease-out;
+  border-left: 4px solid var(--yellow);
+}
+
+@keyframes toastSlide {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Skeleton Loading Effect */
+.skeleton {
+  background: linear-gradient(90deg, var(--border) 25%, var(--bg) 50%, var(--border) 75%);
+  background-size: 200% 100%;
+  animation: skeletonShimmer 1.5s infinite;
+  border-radius: 8px;
+}
+
+@keyframes skeletonShimmer {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Print Friendly Styles for Certificates and ID card */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  .portal-sidebar,
+  .portal-topbar,
+  .to-top,
+  .chat-launcher,
+  .chat-panel,
+  .btn,
+  button {
+    display: none !important;
+  }
+  .portal-main,
+  .portal-content {
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width: 100% !important;
+  }
+  .membership-card {
+    box-shadow: none !important;
+    border: 2px solid #000000 !important;
+    page-break-inside: avoid;
+  }
+}
+
+/* Responsive Breakpoints */
+@media (max-width: 768px) {
+  .portal-sidebar {
+    position: fixed;
+    transform: translateX(-100%);
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.35);
+  }
+  .portal-sidebar.is-open {
+    transform: translateX(0);
+  }
+  .portal-drawer-backdrop.is-open {
+    display: block;
+  }
+  .portal-hamburger {
+    display: block;
+  }
+  .membership-card-wrap {
+    max-width: 100%;
+  }
+}

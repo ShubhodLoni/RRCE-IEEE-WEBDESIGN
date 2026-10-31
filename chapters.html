@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Technical Chapters | IEEE Student Branch — RajaRajeswari College of Engineering</title>
+    <meta
+      name="description"
+      content="Explore IEEE society chapters mapped to departments at RRCE Bengaluru — Computer Society, Robotics and Automation, PES, ComSoc, WIE, and more."
+    />
+    <meta property="og:title" content="Chapters | IEEE Student Branch RRCE Bengaluru" />
+    <meta
+      property="og:description"
+      content="Specialized technical societies at RajaRajeswari College of Engineering, Kumbalgodu, Bengaluru."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#0A2A5E" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("rrce-theme");
+          if (t !== "light" && t !== "dark") {
+            t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+          }
+          document.documentElement.setAttribute("data-theme", t);
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body data-root="" data-page="chapters">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div id="site-chrome-top"></div>
+
+    <main id="main">
+      <section class="hero hero--sub" aria-label="Technical Chapters">
+        <div class="circuit" aria-hidden="true"></div>
+        <div class="container hero__content">
+          <p class="section-kicker">01 Societies</p>
+          <h1>Technical Society Chapters</h1>
+          <p class="lede">
+            Specialized IEEE technical chapters giving RRCE students deep domain expertise, project opportunities, and global network connections.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" id="chapters-list" aria-labelledby="ch-list-title">
+        <div class="container">
+          <div style="margin-bottom: 2rem;">
+            <p class="section-kicker">02 Departments & Societies</p>
+            <h2 id="ch-list-title">Department-Mapped Affinity Units</h2>
+            <p class="lede">
+              The 9 RRCE departments (CSE, ISE, ECE, EEE, ME, Robotics & Automation, CSE-IoT/Cyber, MCA, MBA) are verified.
+              Individual IEEE Society charters and student chapter heads listed below are placeholders (marked TODO) until officially confirmed.
+            </p>
+          </div>
+
+          <div class="grid grid-3" data-chapters-page></div>
+        </div>
+      </section>
+
+      <!-- Chapter Detail Modal -->
+      <div class="modal" id="chapter-modal" hidden>
+        <div class="backdrop" data-ch-close tabindex="-1"></div>
+        <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="chapter-modal-title" tabindex="-1">
+          <div class="modal__head">
+            <div>
+              <span class="todo-note">TODO Society Charter</span>
+              <h2 id="chapter-modal-title" data-ch-title></h2>
+            </div>
+            <button class="icon-btn" type="button" data-ch-close aria-label="Close chapter modal">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 6L6 18M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+          <p class="tag tag--Membership" data-ch-dept></p>
+          <p data-ch-desc></p>
+          <div style="margin: 1rem 0; padding: 0.8rem; background: var(--blue-100); border-radius: var(--radius-sm);">
+            <strong style="display:block; margin-bottom: 0.3rem;">Focus & Activities</strong>
+            <p data-ch-acts style="margin: 0;"></p>
+          </div>
+          <p class="lede" data-ch-head></p>
+          <div style="margin-top: 1.2rem; display: flex; gap: 0.75rem;">
+            <a class="btn btn--yellow" href="membership.html">Join Chapter</a>
+            <button class="btn btn--outline" type="button" data-ch-close>Close</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Chapter Benefits Section -->
+      <section class="section" id="why-chapters" aria-labelledby="ch-ben-title" style="background: var(--card);">
+        <div class="container grid grid-2">
+          <div class="reveal">
+            <p class="section-kicker">03 Advantages</p>
+            <h2 id="ch-ben-title">Why Join a Technical Society?</h2>
+            <p>
+              Society memberships let you concentrate on your specific engineering passions. Whether designing embedded
+              hardware, publishing AI research, or building autonomous drones, chapters offer targeted mentorship.
+            </p>
+            <ul style="padding-left: 1.2rem; display: grid; gap: 0.5rem; margin-top: 1rem;">
+              <li>Domain-specific digital libraries and publications</li>
+              <li>Regional design competitions, hackathons, and symposiums</li>
+              <li>Direct interaction with industry practitioners and IEEE Fellows</li>
+              <li>Leadership and project coordination roles on campus</li>
+            </ul>
+          </div>
+          <div class="card card__body reveal">
+            <h3>Start a New Society Chapter</h3>
+            <p>
+              Interested in launching a new IEEE society chapter at RRCE (e.g., Aerospace, Computational Intelligence, or Photonics)?
+              A minimum number of active student IEEE members and a faculty advisor are required.
+            </p>
+            <p class="todo-note">TODO contact student counselor for petition requirements.</p>
+            <a class="btn btn--blue" href="contact.html">Express Interest</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="section cta-band" aria-labelledby="chapters-cta">
+        <div class="circuit" aria-hidden="true"></div>
+        <div class="container">
+          <p class="section-kicker">04 Take Action</p>
+          <h2 id="chapters-cta">Find Your Engineering Calling</h2>
+          <p class="lede">Student IEEE memberships can include society add-ons. Join IEEE today and connect with RRCE peers.</p>
+          <a class="btn btn--yellow" href="membership.html">How to Join</a>
+          <a class="btn btn--outline" href="events.html">Upcoming Events</a>
+        </div>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+    <div id="site-overlays"></div>
+
+    <script src="js/data.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/chatbot.js"></script>
+  </body>
+</html>

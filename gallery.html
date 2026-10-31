@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Photo Gallery | IEEE Student Branch — RajaRajeswari College of Engineering</title>
+    <meta
+      name="description"
+      content="Visual highlights, technical workshops, hackathons, and campus activities of the IEEE Student Branch at RRCE Bengaluru."
+    />
+    <meta property="og:title" content="Gallery | IEEE Student Branch RRCE" />
+    <meta
+      property="og:description"
+      content="Moments from workshops, hackathons, and symposiums at RRCE Bengaluru."
+    />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#0A2A5E" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("rrce-theme");
+          if (t !== "light" && t !== "dark") {
+            t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+          }
+          document.documentElement.setAttribute("data-theme", t);
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body data-root="" data-page="gallery">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div id="site-chrome-top"></div>
+
+    <main id="main">
+      <section class="hero hero--sub" aria-label="Photo Gallery">
+        <div class="circuit" aria-hidden="true"></div>
+        <div class="container hero__content">
+          <p class="section-kicker">01 Visuals</p>
+          <h1>Campus & Event Gallery</h1>
+          <p class="lede">
+            Glimpses into student life, collaborative hackathons, lab experiments, and technical events at RRCE.
+          </p>
+        </div>
+      </section>
+
+      <section class="section" id="gallery-main" aria-labelledby="gal-heading">
+        <div class="container">
+          <div style="margin-bottom: 1.5rem;">
+            <p class="section-kicker">02 Highlights</p>
+            <h2 id="gal-heading">Browse Photos</h2>
+            <p class="lede">
+              Filter by category or click any image to view in full resolution.
+              <span class="todo-note">TODO: Remote stock placeholders are used until local branch photos are added.</span>
+            </p>
+          </div>
+
+          <!-- Category Chips (Rendered by main.js) -->
+          <div class="chips" data-gallery-chips role="group" aria-label="Filter gallery"></div>
+
+          <!-- Gallery Grid (Rendered by main.js) -->
+          <div class="grid grid-3" data-gallery-page></div>
+        </div>
+      </section>
+
+      <!-- Keyboard Accessible Lightbox -->
+      <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Photo Lightbox" tabindex="-1">
+        <button
+          class="icon-btn"
+          type="button"
+          data-lb-close
+          aria-label="Close lightbox"
+          style="position:fixed;top:1.5rem;right:1.5rem;color:#ffffff;background:rgba(10,42,94,0.7);border-radius:50%;width:44px;height:44px;display:grid;place-items:center;border:1px solid rgba(255,255,255,0.3);z-index:150;"
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 6L6 18M6 6l12 12" />
+          </svg>
+        </button>
+
+        <button
+          class="icon-btn"
+          type="button"
+          data-lb-prev
+          aria-label="Previous photo"
+          style="position:fixed;left:1.5rem;top:50%;transform:translateY(-50%);color:#ffffff;background:rgba(10,42,94,0.7);border-radius:50%;width:44px;height:44px;display:grid;place-items:center;border:1px solid rgba(255,255,255,0.3);z-index:150;"
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M15 18l-6-6 6-6" />
+          </svg>
+        </button>
+
+        <div style="text-align:center;max-width:min(90vw, 1100px);position:relative;z-index:145;">
+          <img src="" alt="" style="max-height:75vh;max-width:100%;margin:0 auto;border-radius:12px;box-shadow:0 12px 40px rgba(0,0,0,0.6);" />
+          <p data-lb-cap style="color:#ffffff;margin-top:0.8rem;font-weight:600;"></p>
+        </div>
+
+        <button
+          class="icon-btn"
+          type="button"
+          data-lb-next
+          aria-label="Next photo"
+          style="position:fixed;right:1.5rem;top:50%;transform:translateY(-50%);color:#ffffff;background:rgba(10,42,94,0.7);border-radius:50%;width:44px;height:44px;display:grid;place-items:center;border:1px solid rgba(255,255,255,0.3);z-index:150;"
+        >
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M9 18l6-6-6-6" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Photographic Archive Note -->
+      <section class="section" id="photo-submit" aria-labelledby="subm-title" style="background: var(--card);">
+        <div class="container grid grid-2">
+          <div class="reveal">
+            <p class="section-kicker">03 Archive</p>
+            <h2 id="subm-title">Preserving Our Technical History</h2>
+            <p>
+              Were you part of a past IEEE conference, hackathon win, or project presentation at RRCE? We welcome high-resolution
+              photographs from alumni and current students to build the branch historical archive.
+            </p>
+          </div>
+          <div class="card card__body reveal">
+            <h3>Contribute Photos</h3>
+            <p>
+              Send event photos along with date, event name, and participant details to our digital media coordinators.
+            </p>
+            <a class="btn btn--blue" href="contact.html">Submit Photographs</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="section cta-band" aria-labelledby="gal-cta">
+        <div class="circuit" aria-hidden="true"></div>
+        <div class="container">
+          <p class="section-kicker">04 Participate</p>
+          <h2 id="gal-cta">Be in the Next Photo Reel</h2>
+          <p class="lede">Attend our upcoming workshops and competitions to leave your mark in the RRCE IEEE community.</p>
+          <a class="btn btn--yellow" href="events.html">Browse Events</a>
+          <a class="btn btn--outline" href="membership.html">Join IEEE</a>
+        </div>
+      </section>
+    </main>
+
+    <div id="site-footer"></div>
+    <div id="site-overlays"></div>
+
+    <script src="js/data.js"></script>
+    <script src="js/components.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/chatbot.js"></script>
+  </body>
+</html>

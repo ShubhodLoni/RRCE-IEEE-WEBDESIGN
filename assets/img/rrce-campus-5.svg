@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <rect width="1600" height="900" fill="#E3EEFB"/>
+  <rect x="0" y="420" width="1600" height="20" fill="#FFC20E"/>
+  <rect x="80" y="180" width="1440" height="520" fill="#0B5CAD" rx="16"/>
+  <g fill="#FFFFFF" opacity="0.9">
+    <circle cx="300" cy="420" r="80"/><circle cx="560" cy="420" r="80"/>
+    <circle cx="820" cy="420" r="80"/><circle cx="1080" cy="420" r="80"/>
+    <circle cx="1340" cy="420" r="80"/>
+  </g>
+  <text x="800" y="640" text-anchor="middle" fill="#FFFFFF" font-family="Arial" font-size="32" font-weight="700">LABS AND WORKSHOPS</text>
+</svg>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Member Notifications | IEEE RRCE Member Portal</title>
+    <meta
+      name="description"
+      content="View branch notices, certificate alerts, event reminders, and points updates."
+    />
+    <meta name="theme-color" content="#0A2A5E" />
+    <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/portal.css" />
+    <link rel="stylesheet" href="../css/chatbot.css" />
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem("rrce-theme");
+          if (t !== "light" && t !== "dark") {
+            t = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+          }
+          document.documentElement.setAttribute("data-theme", t);
+        } catch (e) {}
+      })();
+    </script>
+  </head>
+  <body data-root="../" data-page="notifications">
+    <a class="skip-link" href="#main">Skip to notifications</a>
+
+    <div class="portal-layout">
+      <aside class="portal-sidebar" id="portal-sidebar"></aside>
+
+      <div class="portal-main">
+        <header class="portal-topbar" id="portal-topbar"></header>
+
+        <main class="portal-content" id="main">
+          <div class="portal-page-head">
+            <div>
+              <p class="section-kicker" style="margin:0 0 0.25rem;">Alerts & Broadcasts</p>
+              <h1>Notifications Inbox</h1>
+              <p style="margin:0; color:var(--muted); font-size:0.92rem;">
+                Stay updated on registration status, certificates issued, and community mentions.
+              </p>
+            </div>
+            <div>
+              <button class="btn btn--outline" type="button" id="mark-all-read-btn">
+                Mark All as Read
+              </button>
+            </div>
+          </div>
+
+          <!-- Filter Chips -->
+          <div class="chips" id="notifications-chips" role="group" aria-label="Notification type filters">
+            <button class="chip is-active" type="button" data-chip="All">All</button>
+            <button class="chip" type="button" data-chip="Event">Events</button>
+            <button class="chip" type="button" data-chip="Certificate">Certificates</button>
+            <button class="chip" type="button" data-chip="Points">Points</button>
+            <button class="chip" type="button" data-chip="Announcement">Announcements</button>
+          </div>
+
+          <!-- Notification List Container -->
+          <div style="display:flex; flex-direction:column; gap:0.75rem;" id="portal-notifications-list"></div>
+        </main>
+      </div>
+    </div>
+
+    <div id="site-overlays"></div>
+
+    <script src="../js/data.js"></script>
+    <script src="../js/components.js"></script>
+    <script src="../js/portal-data.js"></script>
+    <script src="../js/portal.js"></script>
+    <script src="../js/chatbot.js"></script>
+  </body>
+</html>
